@@ -7,6 +7,10 @@ export default function Transactiontable({ id, date, category, description, amou
             <td>{category}</td>
             <td>{description}</td>
             <td>{amount}</td>
+            <td>
+                <button>Delete</button>
+                <button>Edit</button>
+            </td>
         </tr>
 
     )
