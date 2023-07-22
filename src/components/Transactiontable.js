@@ -1,4 +1,4 @@
-export default function Transactiontable({ id, date, category, description, amount }) {
+export default function Transactiontable({ id, date, category, description, amount, onDeleteTransaction }) {
     return (
 
         <tr>
@@ -8,7 +8,7 @@ export default function Transactiontable({ id, date, category, description, amou
             <td>{description}</td>
             <td>{amount}</td>
             <td>
-                <button>Delete</button>
+                <button onClick={()=>onDeleteTransaction(id)}>Delete</button>
                 <button>Edit</button>
             </td>
         </tr>

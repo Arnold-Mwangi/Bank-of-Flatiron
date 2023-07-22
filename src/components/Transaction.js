@@ -1,6 +1,6 @@
 import Transactiontable from "./Transactiontable"
 
-export default function Transaction({transactionData}){
+export default function Transaction({transactionData, onDeleteTransaction}){
 
     return(
         <div>
@@ -22,6 +22,7 @@ export default function Transaction({transactionData}){
                 description={item.description}
                 category={item.category}
                 amount={item.amount}
+                onDeleteTransaction={onDeleteTransaction}
               />
             ))}
           </tbody>

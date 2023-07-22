@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react'
 import Transaction from './components/Transaction'
 import AddTransaction from './components/AddTransaction'
+import Search from './components/search'
 
 function App() {
 
   const [transactions, settransactions] = useState([])
   const [lastUsedId, setlastUsedId] = useState(14)
-
-  const handleAddTransaction =(newTransactionData)=>{
-    const transactionUpdate = {...newTransactionData, id: lastUsedId + 1};
-settransactions([...transactions, transactionUpdate])
-setlastUsedId(lastUsedId + 1)
-  }
+  const [filteredTransactions, setfilteredTransactions] = useState([])
+  const [transactiontodelete, settransactiontodelete] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:8001/transactions")
@@ -22,12 +19,69 @@ setlastUsedId(lastUsedId + 1)
       })
 
   }, [])
-  console.log(transactions)
+
+  useEffect(() => {
+    setfilteredTransactions(transactions)
+  }, [transactions])
+
+  useEffect(() => {
+    if (transactiontodelete !== null) {
+      const updatedTable = filteredTransactions.filter(
+        (transaction) => transaction.id !== transactiontodelete
+      )
+      setfilteredTransactions(updatedTable);
+      settransactiontodelete(null)
+    }
+  }, [transactiontodelete, filteredTransactions])
+
+  const handleAddTransaction = (newTransactionData) => {
+    const transactionUpdate = { ...newTransactionData, id: lastUsedId + 1 };
+    settransactions([...transactions, transactionUpdate])
+    setlastUsedId(lastUsedId + 1)
+  }
+
+  const handleDeleteTransaction = (id) => {
+    settransactiontodelete(id)
+  }
+
+  const handleSearch = (search, searchBy) => {
+    let newfilteredTransactions = transactions;
+    if (searchBy === 'description') {
+      newfilteredTransactions = transactions.filter((transaction) =>
+        transaction.description.toLowerCase().indexOf(search.toLowerCase()) !== -1
+      );
+    } else if (searchBy === 'category') {
+      newfilteredTransactions = transactions.filter((transaction) =>
+        transaction.category.toLowerCase().indexOf(search.toLowerCase()) !== -1
+      );
+    } else if (searchBy === 'date') {
+      newfilteredTransactions = transactions.filter((transaction) =>
+        transaction.date.includes(search)
+      );
+    } else if (searchBy === 'amount') {
+      // Assume the query is a valid number
+      newfilteredTransactions = transactions.filter(
+        (transaction) => transaction.amount === parseFloat(search)
+      );
+    }
+
+
+
+    // Set the filtered transactions in the state
+    setfilteredTransactions(newfilteredTransactions);
+    console.log(transactions)
+    console.log("yoh", filteredTransactions)
+
+  }
 
   return (
     <>
-      <AddTransaction onAddTransaction={handleAddTransaction}/>
-      <Transaction transactionData={transactions} />
+      <AddTransaction onAddTransaction={handleAddTransaction} />
+      <Search onSearch={handleSearch} />
+      <Transaction
+        transactionData={filteredTransactions}
+        onDeleteTransaction={handleDeleteTransaction}
+      />
     </>
 
   )
