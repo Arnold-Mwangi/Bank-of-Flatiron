@@ -76,6 +76,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <AddTransaction onAddTransaction={handleAddTransaction} />
       <Search onSearch={handleSearch} />
       <Transaction
