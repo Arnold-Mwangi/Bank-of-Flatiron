@@ -9,53 +9,74 @@ export default function Search({ onSearch }) {
     };
 
     return (
-        <div>
-            <input
-                typr="text"
-                value={search}
-                onChange={(e) => setsearch(e.target.value)}
-                placeholder='Search....'
-            />
+        <div className='landing'>
+            <div class="overlay"></div>
+            <div className='landing_page'>
             <div>
-                <label>
+                <h1>Search for a transaction<br /> By</h1>
+
+            </div>
+            <div className='landing-content'>
+                
+                <label className="radio-label">
                     <input
-                    type="radio"
-                    value="description"
-                    checked={searchBy === 'description'}
-                    onChange={()=>setSearchBy('description')}
+                        type="radio"
+                        value="description"
+                        checked={searchBy === 'description'}
+                        className='radio-input'
+                        onChange={() => setSearchBy('description')}
                     />
+                     <span className="custom-radio"></span>
                     Description
                 </label>
-                <label>
+                <label className="radio-label">
                     <input
-                    type="radio"
-                    value="category"
-                    checked={searchBy === 'category'}
-                    onChange={()=>setSearchBy('category')}
+                        type="radio"
+                        value="category"
+                        checked={searchBy === 'category'}
+                        className='radio-input'
+                        onChange={() => setSearchBy('category')}
                     />
+                     <span className="custom-radio"></span>
                     Category
                 </label>
-                <label>
+                <label className="radio-label">
                     <input
-                    type="radio"
-                    value="date"
-                    checked={searchBy === 'date'}
-                    onChange={()=>setSearchBy('date')}
+                        type="radio"
+                        value="date"
+                        checked={searchBy === 'date'}
+                        className='radio-input'
+                        onChange={() => setSearchBy('date')}
                     />
+                     <span className="custom-radio"></span>
                     Date
                 </label>
-                <label>
+                <label className="radio-label">
                     <input
-                    type="radio"
-                    value="amount"
-                    checked={searchBy === 'amount'}
-                    onChange={()=>setSearchBy('amount')}
+                        type="radio"
+                        value="amount"
+                        checked={searchBy === 'amount'}
+                        className='radio-input'
+                        onChange={() => setSearchBy('amount')}
                     />
+                     <span className="custom-radio"></span>
                     Amount
                 </label>
             </div>
-            <button onClick={handleSearch}>Search</button>
+            <div>
+                <input
+                    type="text"
+                    value={search}
+                    onChange={(e) => setsearch(e.target.value)}
+                    placeholder='Search....'
+                />
+                <button className='search' onClick={handleSearch}><i className="fas fa-search"></i></button>
+            </div>
+            </div>
+           
+
         </div>
+        
     );
 
 }

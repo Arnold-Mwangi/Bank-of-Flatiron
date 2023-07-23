@@ -8,8 +8,9 @@ export default function Transactiontable({ id, date, category, description, amou
             <td>{description}</td>
             <td>{amount}</td>
             <td>
-                <button onClick={()=>onDeleteTransaction(id)}>Delete</button>
-                <button>Edit</button>
+                <button onClick={()=>onDeleteTransaction(id)}><i className="fas fa-trash-alt"></i>
+</button>
+                
             </td>
         </tr>
 

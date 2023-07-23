@@ -3,8 +3,8 @@ import Transactiontable from "./Transactiontable"
 export default function Transaction({transactionData, onDeleteTransaction}){
 
     return(
-        <div>
-        <table>
+        <div className="table_holder">
+        <table className="custom-table">
           <tbody>
             <tr>
               <th>ID</th>

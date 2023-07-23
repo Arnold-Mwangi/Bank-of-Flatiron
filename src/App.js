@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
+import './App.css'
+import Header from './components/Header'
 import Transaction from './components/Transaction'
 import AddTransaction from './components/AddTransaction'
 import Search from './components/search'
+
 
 function App() {
 
@@ -77,12 +80,15 @@ function App() {
   return (
     <>
       <Header />
-      <AddTransaction onAddTransaction={handleAddTransaction} />
+      <div className='container'>
       <Search onSearch={handleSearch} />
+      <AddTransaction onAddTransaction={handleAddTransaction} />
       <Transaction
         transactionData={filteredTransactions}
         onDeleteTransaction={handleDeleteTransaction}
       />
+      </div>
+     
     </>
 
   )
