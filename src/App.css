@@ -100,8 +100,8 @@ li{
   
   /* Styles for the custom radio button */
   .custom-radio {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     background-color: #CAC0B3;
     border-radius: 10px;
     margin-left: 10px;
@@ -148,7 +148,7 @@ li{
     border-collapse: collapse;
     font-size: 16px;
     text-align: center;
-       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a light shadow for a subtle effect */
+       box-shadow: 0 2px 4px rgba(180, 175, 175, 0.527); /* Add a light shadow for a subtle effect */
        color: #CAC0B3; 
   }
   

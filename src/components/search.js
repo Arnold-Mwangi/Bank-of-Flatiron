@@ -10,7 +10,7 @@ export default function Search({ onSearch }) {
 
     return (
         <div className='landing'>
-            <div class="overlay"></div>
+            <div className="overlay"></div>
             <div className='landing_page'>
             <div>
                 <h1>Search for a transaction<br /> By</h1>

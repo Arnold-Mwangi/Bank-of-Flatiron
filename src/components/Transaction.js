@@ -1,6 +1,7 @@
 import Transactiontable from "./Transactiontable"
 
 export default function Transaction({transactionData, onDeleteTransaction}){
+  console.log("gggg",transactionData);
 
     return(
         <div className="table_holder">

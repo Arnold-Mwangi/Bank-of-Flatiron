@@ -14,7 +14,7 @@ function App() {
   const [transactiontodelete, settransactiontodelete] = useState(null)
 
   useEffect(() => {
-    fetch("http://localhost:8001/transactions")
+    fetch("https://bank-of-flatiron-gcma.onrender.com/transactions")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -22,6 +22,7 @@ function App() {
       })
 
   }, [])
+  console.log("hey",transactions.data)
 
   useEffect(() => {
     setfilteredTransactions(transactions)
