@@ -1,11 +1,14 @@
-# Getting Started with Create React App
+## bank of flatiron
+Is a web application that fetches bank transactions from a Bank transactions API and allows a user to perform CRUD operations on the transactions
+It implements the use of fetch API, React state, Components, props, react lists, react forms, and the passing of data from child components to Parent components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+ Project deployment link: []((https://chimerical-rugelach-605b02.netlify.app/)).
+# Getting Started with Bank of Flatiron React App
+  Clone the project to your machine
+ Then run the following commands in the project root directory:
+ ### `npm install`
+The command installs all the dependencies and packages required by the app according to the package.json file.
+  
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -14,57 +17,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## The project should look like this on opening
+![Screenshot from 2023-07-26 12-14-32](https://github.com/Arnold-Mwangi/Bank-of-Flatiron/assets/78974739/f99f91ba-cd17-489f-b309-8c8b5dde77f0)
 
-### `npm run build`
+## A user can search for a transaction by description, category amount or data.
+This is accomplished by selecting the filter to use. For instance, clicking on the Category radio button will allow the user to perform a search based on the category
+![Screenshot from 2023-07-26 12-19-04](https://github.com/Arnold-Mwangi/Bank-of-Flatiron/assets/78974739/bcb907fa-73a4-446d-8b6a-4e4fd805fb55)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Transaction Deleting
+To delete a transaction all you have to do is click on the delete icon on the table rows.
+This action removes the transaction from the DOM based on the transaction ID
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
